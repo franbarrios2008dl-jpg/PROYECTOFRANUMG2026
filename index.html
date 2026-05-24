@@ -5,38 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio Web Personal</title>
     <link rel="stylesheet" href="css/style.css">
-   <script>
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        const leftArrow = document.querySelector('.arrow.left');
-        const rightArrow = document.querySelector('.arrow.right');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            // Validar límites del slider
-            if (index >= slides.length) currentIndex = 0;
-            else if (index < 0) currentIndex = slides.length - 1;
-            else currentIndex = index;
-
-            // Apagar todas las fotos y puntitos
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-
-            // Encender solo la foto y puntito actual
-            slides[currentIndex].classList.add('active');
-            dots[currentIndex].classList.add('active');
-        }
-
-        // Eventos para las flechas
-        rightArrow.addEventListener('click', () => showSlide(currentIndex + 1));
-        leftArrow.addEventListener('click', () => showSlide(currentIndex - 1));
-
-        // Eventos para los puntitos de abajo
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => showSlide(i));
-        });
-    </script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 
 </head>
 <body>
@@ -55,9 +24,8 @@
         </nav>
     </header>
 
-   <section class="slider-container">
+   <div class="slider-container">
         <div class="slider">
-            
             <div class="slide active">
                 <img src="img/FOTOBEBE.jpeg" alt="Mis pasiones">
                 <div class="slide-text">
@@ -99,7 +67,7 @@
             </div>
 
             <div class="slide">
-                <img src="img/FOTO67.jpeg" alt="Mis herramientas">
+                 <img src="img/FOTO67.jpeg" alt="Mis herramientas">
                 <div class="slide-text">
                     <h2>Herramientas</h2>
                     <p>Uso de entornos profesionales como Visual Studio Code, Photoshop, etc.</p>
@@ -108,19 +76,7 @@
 
 
         </div>
-
-        <span class="arrow left">&#10094;</span>
-        <span class="arrow right">&#10095;</span>
-        <div class="dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </section>
+    </div>
 
     <section id="acerca" class="info-section">
         <div class="container">
@@ -160,6 +116,20 @@
             <p>Introducción a los sistemas de computación</p>
         </div>
     </footer>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+                $(document).ready(function(){
+            $('.slider').bxSlider({
+                mode: 'fade', 
+                captions: true, 
+                auto: true, 
+                pause: 8000,
+                slideWidth: 800,
+                adaptiveHeight: true,
+                pager: true
+            });
+        });
+    </script>
 </body>
 </html>
