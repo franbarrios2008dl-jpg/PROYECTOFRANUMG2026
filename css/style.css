@@ -58,38 +58,22 @@ header nav .btn-nav:hover {
 }
 
 /* --- SLIDER PRINCIPAL --- */
-.slider-container {
-    position: relative;
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 30px;
+}
+
+.slider-wrapper {
+    margin-bottom: 30px;
+    border: 4px solid #ddd;
+}
+
+.slider img {
     width: 100%;
-    height: 450px;
-    background-color: #e5e7eb;
-    overflow: hidden;
+    display: block;
 }
-
-.slider, .slide {
-    width: 100%;
-    height: 100%;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slide-text {
-    position: absolute;
-    bottom: 40px;
-    left: 8%;
-    background-color: rgba(149, 137, 9, 0.85);
-    color: white;
-    padding: 25px;
-    border-radius: 8px;
-    max-width: 500px;
-}
-
-.slide-text h2 { margin-bottom: 10px; font-size: 1.8rem; }
-
 /* Controles decorativos del Slider */
 .arrow {
     position: absolute;
