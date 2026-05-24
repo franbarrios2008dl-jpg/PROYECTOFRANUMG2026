@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* --- MENÚ DE NAVEGACIÓN --- */
+header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+
+header nav a {
+    color: #4b5563;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #1e3a8a;
+}
+
+header nav .btn-nav {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+header nav .btn-nav:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+/* --- SLIDER PRINCIPAL --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: #e5e7eb;
+    overflow: hidden;
+}
+
+.slider, .slide {
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 40px;
+    left: 8%;
+    background-color: rgba(149, 137, 9, 0.85);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 500px;
+}
+
+.slide-text h2 { margin-bottom: 10px; font-size: 1.8rem; }
+
+/* Controles decorativos del Slider */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background: rgba(0,0,0,0.3);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.left { left: 20px; }
+.right { right: 20px; }
+.dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.dot.active { background: white; }
+
+/* --- SECCIÓN INFORMATIVA 3 COLUMNAS --- */
+.info-section {
+    padding: 60px 8%;
+    background-color: #ffffff;
+}
+
+.info-section .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.columna {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    padding: 30px 20px;
+    background: #f8fafc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.columna .icono {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.columna h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.columna p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #1e293b;
+    color: #f8fafc;
+    padding: 40px 8% 20px 8%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.footer-links a:hover { color: white; }
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    color: white;
+    text-decoration: none;
+    background: #334155;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* --- ESTILOS DE LOS FORMULARIOS (LOGIN, REGISTRO, RECUPERACIÓN) --- */
+.body-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #04bd7f, #1d4ed8);
+}
+
+.bg-gris { background: #e5e7eb; }
+
+/* Tarjeta Login */
+.login-card {
+    background: white;
+    width: 360px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.avatar-container {
+    margin-bottom: 30px;
+}
+
+.avatar {
+    font-size: 3rem;
+    background: #f3f4f6;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    color: #9ca3af;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9fafb;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+.link-olvido {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #10b981; /* Verde como en tu imagen */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover { background-color: #059669; }
+
+.form-redirect {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.form-redirect a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilos Registro (Dividido) */
+.registro-container {
+    display: flex;
+    width: 800px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.registro-izquierdo {
+    flex: 1;
+    padding: 40px;
+}
+
+.registro-izquierdo h2 {
+    margin-bottom: 25px;
+    color: #374151;
+}
+
+.input-line {
+    margin-bottom: 15px;
+}
+
+.input-line label {
+    display: block;
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 5px;
+}
+
+.input-line input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #d1d5db;
+    padding: 8px 0;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-line input:focus {
+    border-bottom-color: #ff6347;
+}
+
+.btn-registro {
+    background-color: #ff6347; /* Naranja rojizo */
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.registro-derecho {
+    flex: 1;
+    background-color: #00bfa5; /* Verde azulado */
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.registro-derecho h2 { margin-bottom: 30px; }
+
+.social-login-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-social {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.btn-social.fb { background-color: #2b55a4; }
+.btn-social.tw { background-color: #00a2e8; }
+.btn-social.mail { background-color: #00c49f; border: 1px solid rgba(255,255,255,0.4); }
+
+/* Tarjeta Recuperar */
+.recuperar-card {
+    background: white;
+    width: 480px;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.recuperar-card h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.linea-decorativa {
+    width: 40px;
+    height: 4px;
+    background-color: #333;
+    margin-bottom: 25px;
+}
+
+.instruccion-text {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.input-icon-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.input-icon-group .icon-mail {
+    margin-right: 10px;
+    color: #888;
+}
+
+.input-icon-group input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn-enviar-email {
+    background-color: #ff6b61; /* Color coral de la imagen */
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+
+.slide {
+    display: none; /* Esto oculta las 6 fotos extras */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide.active {
+    display: block; /* Esto solo muestra la foto que el JavaScript activa al dar clic */
+}
+}

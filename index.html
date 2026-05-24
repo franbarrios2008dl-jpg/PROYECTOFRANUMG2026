@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio Web Personal</title>
+    <link rel="stylesheet" href="css/style.css">
+   <script>
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const leftArrow = document.querySelector('.arrow.left');
+        const rightArrow = document.querySelector('.arrow.right');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            // Validar límites del slider
+            if (index >= slides.length) currentIndex = 0;
+            else if (index < 0) currentIndex = slides.length - 1;
+            else currentIndex = index;
+
+            // Apagar todas las fotos y puntitos
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Encender solo la foto y puntito actual
+            slides[currentIndex].classList.add('active');
+            dots[currentIndex].classList.add('active');
+        }
+
+        // Eventos para las flechas
+        rightArrow.addEventListener('click', () => showSlide(currentIndex + 1));
+        leftArrow.addEventListener('click', () => showSlide(currentIndex - 1));
+
+        // Eventos para los puntitos de abajo
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => showSlide(i));
+        });
+    </script>
+
+
+</head>
+<body>
+  <script src="https://kit.fontawesome.com/d273172915.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <header>
+        <div class="logo">FRANDL</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="#acerca">Acerca</a>
+            <a href="#intereses">Intereses</a>
+            <a href="#contacto">Contáctenos</a>
+            <a href="login.html" class="btn-nav">Inicio Sesión</a>
+        </nav>
+    </header>
+
+   <section class="slider-container">
+        <div class="slider">
+            
+            <div class="slide active">
+                <img src="img/FOTOBEBE.jpeg" alt="Mis pasiones">
+                <div class="slide-text">
+                    <h2>Bienvenido a mi espacio digital</h2>
+                    <p>Aquí comparto mi contenido y lo que más me apasiona.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/foto3.jpeg" alt="Mis hobbies">
+                <div class="slide-text">
+                    <h2>Mis Pasatiempos</h2>
+                    <p>En mis tiempos libres me gusta explorar nuevas tecnologías.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/FOTO4.jpeg" alt="Mis estudios">
+                <div class="slide-text">
+                    <h2>Mi Formación</h2>
+                    <p>Estudiante de Introducción a los sistemas de computación.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/FOTO1.jpeg" alt="Mis proyectos">
+                <div class="slide-text">
+                    <h2>Proyectos Futuros</h2>
+                    <p>Maquetación y diseño de interfaces web modernas.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/FOTO2.jpeg" alt="Mi motivación">
+                <div class="slide-text">
+                    <h2>Mi Motivación</h2>
+                    <p>Aprender constantemente y superar nuevos retos técnicos.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="img/FOTO67.jpeg" alt="Mis herramientas">
+                <div class="slide-text">
+                    <h2>Herramientas</h2>
+                    <p>Uso de entornos profesionales como Visual Studio Code, Photoshop, etc.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <span class="arrow left">&#10094;</span>
+        <span class="arrow right">&#10095;</span>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <section id="acerca" class="info-section">
+        <div class="container">
+            <div class="columna">
+                <div class="icono">🎯</div> <h3>Mis Valores</h3>
+                <p>Disciplina, creatividad y el deseo constante de aprender nuevas tecnologías cada día para superar cualquier reto académico.</p>
+            </div>
+            <div class="columna">
+                <div class="icono">🚀</div>
+                <h3>Mi Misión</h3>
+                <p>Desarrollar mis habilidades en sistemas de cómputo y crear soluciones digitales innovadoras que impacten positivamente a nivel local e internacional.</p>
+            </div>
+            <div class="columna">
+                <div class="icono">👁️</div>
+                <h3>Mi Visión</h3>
+                <p>Convertirme en un profesional experto en tecnología, liderando proyectos de desarrollo web que eliminen las limitaciones geográficas.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="#acerca">Acerca</a>
+                <a href="login.html">Inicio Sesión</a>
+            </div>
+            <div class="footer-socials">
+                <a href="#" class="social-icon">📧 franbarrios2008dl@gmail.com</a>
+                <a href="#" class="social-icon">🔵 Facebook</a>
+                <a href="#" class="social-icon">🐦 Twitter</a>
+                <a href="#" class="social-icon">🔴 YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Creado por Juan Francisco Paxtor De León</p>
+            <p>Introducción a los sistemas de computación</p>
+        </div>
+    </footer>
+
+</body>
+</html>
